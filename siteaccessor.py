@@ -1,6 +1,6 @@
 from robobrowser import RoboBrowser
 from settingsparser import Settings
-import logging
+import logging, os
 
 
 class SiteAccessor:
@@ -12,6 +12,10 @@ class SiteAccessor:
 
     @property
     def count(self):
+        if not os.path.isfile(self._count_store):
+            self.count = 0
+            return 0
+
         with open(self._count_store, 'r') as count:
             return int(count.read())
 
