@@ -3,3 +3,5 @@ settings.yml
 *.pyc
 venv/
 count.store
+output.log
+log/
