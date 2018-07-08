@@ -12,7 +12,7 @@ handlers:
     class: logging.FileHandler
     level: DEBUG
     formatter: standard
-    filename: output.log
+    filename: log/output.log
   email:
     class: logging.handlers.SMTPHandler
     level: WARNING
