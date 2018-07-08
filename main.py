@@ -29,4 +29,4 @@ def login():
 schedule.every().day.at("20:00").do(login)
 while True:
     schedule.run_pending()
-    time.sleep(30)
+    time.sleep(1)
