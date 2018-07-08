@@ -1,0 +1,20 @@
+version: '3'
+services:
+  fanatic_hunter:
+    restart: on-failure
+    build:
+      context: ./
+      dockerfile: fanatic_hunter.dockerfile
+    volumes:
+      - fanatic_hunter_log:/usr/src/fanatic-hunter/log
+  logserver:
+    restart: on-failure
+    build:
+      context: ./
+      dockerfile: httptextfileserver.dockerfile
+    volumes:
+      - fanatic_hunter_log:/usr/src/log
+    ports:
+     - 5678:5678
+volumes:
+  fanatic_hunter_log:
