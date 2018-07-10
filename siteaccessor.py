@@ -91,7 +91,7 @@ class SiteAccessor:
 
         try:
             current_count = int(self.session.find("span", class_="g-col jc-end -subtitle -count").get_text().split('/')[0])
-            self.logger.debug('"Fanatic" count value: {}'.format(current_count))
+            self.logger.info('"Fanatic" count value: {}'.format(current_count))
         except Exception:
             self.logger.exception('Could not find badge count value in response')
             return 0
@@ -118,4 +118,4 @@ class SiteAccessor:
             self.logger.exception('Failed to check badge value')
 
         self.logger.info('Badge value status ok')
-        return current_badge_value
+        self.count = current_badge_value
