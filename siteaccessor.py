@@ -90,7 +90,7 @@ class SiteAccessor:
             return 0
 
         try:
-            current_count = int(self.session.find("span", class_="g-col jc-end -subtitle -count").get_text().split('/')[0])
+            current_count = int(self.session.find("span", class_="grid--cell ml-auto fs-caption").get_text().split('/')[0])
             self.logger.info('"Fanatic" count value: {}'.format(current_count))
         except Exception:
             self.logger.exception('Could not find badge count value in response')
